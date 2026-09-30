@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>〇〇建築設計事務所｜建築の可能性を、かたちに。</title>
+<meta name="description" content="〇〇建築設計事務所。企画・設計から各種申請、監理まで、建築をワンストップでサポートします。">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;color:#222;background:#f7f7f5;line-height:1.8}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:min(1120px,calc(100% - 40px));margin:auto}
+header{position:fixed;top:0;left:0;right:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid #e8e8e4}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;letter-spacing:.08em;font-size:17px}
+.logo span{display:block;font-size:10px;font-weight:500;letter-spacing:.18em;color:#777;margin-top:1px}
+nav{display:flex;gap:28px;font-size:13px;font-weight:700}
+nav a{transition:.2s}
+nav a:hover{opacity:.55}
+.hero{min-height:680px;padding:170px 0 100px;background:linear-gradient(135deg,#f0f0ec 0%,#fafaf8 55%,#e8e8e3 100%);display:flex;align-items:center}
+.hero-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:center}
+.eyebrow{font-size:12px;letter-spacing:.22em;font-weight:800;color:#777;margin-bottom:22px}
+h1{font-size:clamp(38px,6vw,72px);line-height:1.2;letter-spacing:.04em;margin:0 0 28px;font-weight:800}
+.lead{font-size:17px;color:#555;max-width:620px}
+.hero-card{height:360px;background:#d9d9d4;position:relative;overflow:hidden}
+.hero-card:before{content:"";position:absolute;inset:28px;background:linear-gradient(145deg,#bdbdb7,#eeeeeb 48%,#b2b2ac);clip-path:polygon(0 18%,65% 0,100% 25%,72% 100%,18% 82%)}
+.hero-card:after{content:"ARCHITECTURE";position:absolute;bottom:24px;right:24px;font-size:11px;letter-spacing:.2em;color:#666}
+section{padding:105px 0}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:flex-end;margin-bottom:55px}
+.section-label{font-size:11px;letter-spacing:.22em;font-weight:800;color:#888}
+h2{font-size:36px;line-height:1.3;margin:7px 0 0;letter-spacing:.04em}
+.section-desc{max-width:500px;color:#666;font-size:14px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.about p{margin-top:0;color:#555}
+.about-box{border-left:3px solid #222;padding:8px 0 8px 28px;font-size:20px;font-weight:700;line-height:1.7}
+.services{background:#20201e;color:#fff}
+.services .section-label{color:#aaa}
+.services .section-desc{color:#bbb}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#555}
+.service{background:#20201e;padding:36px 30px;min-height:250px}
+.service-num{font-size:12px;color:#999;letter-spacing:.12em}
+.service h3{font-size:20px;margin:35px 0 15px}
+.service p{font-size:13px;color:#bbb;margin:0}
+.works-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.work{background:#e5e5e0;min-height:330px;position:relative;overflow:hidden}
+.work:nth-child(2){background:#d9d9d4}
+.work:nth-child(3){background:#ecece8}
+.work:nth-child(4){background:#d1d1cb}
+.work-visual{position:absolute;inset:0}
+.work-visual:before{content:"";position:absolute;left:12%;right:12%;top:16%;bottom:14%;background:linear-gradient(150deg,rgba(255,255,255,.75),rgba(150,150,145,.45));clip-path:polygon(0 12%,78% 0,100% 72%,20% 100%)}
+.work-info{position:absolute;left:24px;right:24px;bottom:22px;background:rgba(255,255,255,.9);padding:15px 18px}
+.work-info strong{font-size:16px}
+.work-info small{display:block;color:#777;font-size:11px;margin-top:3px}
+.process{background:#efefeb}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{background:#fff;padding:28px 24px;border-top:2px solid #222}
+.step-num{font-size:11px;color:#888;letter-spacing:.15em}
+.step h3{font-size:18px;margin:24px 0 10px}
+.step p{font-size:13px;color:#666;margin:0}
+.contact{background:#dcdcd6}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.contact h2{font-size:42px}
+.contact-info{font-size:14px}
+.contact-info div{padding:15px 0;border-bottom:1px solid rgba(0,0,0,.15)}
+.contact-info strong{display:inline-block;width:90px}
+footer{background:#20201e;color:#fff;padding:34px 0;font-size:11px}
+.footer-inner{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:800px){
+ nav{display:none}
+ .hero-inner,.about,.contact-inner{grid-template-columns:1fr}
+ .hero{padding-top:130px}
+ .hero-card{height:280px}
+ .section-head{display:block}
+ .section-desc{margin-top:20px}
+ .service-grid,.steps{grid-template-columns:1fr 1fr}
+ .works-grid{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+ .container{width:min(100% - 28px,1120px)}
+ section{padding:75px 0}
+ .service-grid,.steps{grid-template-columns:1fr}
+ h2{font-size:30px}
+ .contact h2{font-size:34px}
+ .footer-inner{display:block}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="container nav">
+<a class="logo" href="#">〇〇建築設計事務所<span>ARCHITECTURAL DESIGN OFFICE</span></a>
+<nav>
+<a href="#about">ABOUT</a>
+<a href="#service">SERVICE</a>
+<a href="#works">WORKS</a>
+<a href="#process">PROCESS</a>
+<a href="#contact">CONTACT</a>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="hero">
+<div class="container hero-inner">
+<div>
+<div class="eyebrow">ARCHITECTURE / DESIGN / CONSULTING</div>
+<h1>建築の可能性を、<br>かたちに。</h1>
+<p class="lead">企画・設計から各種申請、監理まで。建築をワンストップで支え、使う人の未来まで見据えた空間をつくります。</p>
+</div>
+<div class="hero-card" aria-label="建築イメージ"></div>
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+<div class="section-head">
+<div><div class="section-label">01 / ABOUT</div><h2>建築を、もっと自由に。</h2></div>
+<p class="section-desc">敷地・法規・予算・用途など、さまざまな条件を整理し、可能性へ変えていきます。</p>
+</div>
+<div class="about">
+<div class="about-box">設計だけではなく、建築に関わるすべてを一つの視点で。</div>
+<div>
+<p>私たちは、住宅・共同住宅・店舗・事務所など幅広い建築の企画・設計・監理を行う設計事務所です。</p>
+<p>お客様との対話を大切にし、土地の条件や法規制を丁寧に読み解きながら、長く愛される建築を提案します。</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="service" class="services">
+<div class="container">
+<div class="section-head">
+<div><div class="section-label">02 / SERVICE</div><h2>できること。</h2></div>
+<p class="section-desc">構想段階から完成まで、建築プロジェクトを一貫してサポートします。</p>
+</div>
+<div class="service-grid">
+<article class="service"><div class="service-num">01</div><h3>建築設計・監理</h3><p>基本計画、基本設計、実施設計、工事監理まで、建物の品質と完成度を支えます。</p></article>
+<article class="service"><div class="service-num">02</div><h3>各種申請・法規対応</h3><p>確認申請をはじめ、用途・地域・規模に応じた法規の整理と各種手続きをサポートします。</p></article>
+<article class="service"><div class="service-num">03</div><h3>企画・コンサルティング</h3><p>土地活用や事業計画の初期段階から、条件整理・ボリューム検討・企画提案を行います。</p></article>
+</div>
+</div>
+</section>
+
+<section id="works">
+<div class="container">
+<div class="section-head">
+<div><div class="section-label">03 / WORKS</div><h2>実績・プロジェクト。</h2></div>
+<p class="section-desc">これまでの設計・企画事例を掲載しています。※画像・案件名はサンプルです。</p>
+</div>
+<div class="works-grid">
+<div class="work"><div class="work-visual"></div><div class="work-info"><strong>都市型住宅</strong><small>RESIDENTIAL / 2025</small></div></div>
+<div class="work"><div class="work-visual"></div><div class="work-info"><strong>店舗＋オフィス</strong><small>COMMERCIAL / 2024</small></div></div>
+<div class="work"><div class="work-visual"></div><div class="work-info"><strong>集合住宅</strong><small>APARTMENT / 2024</small></div></div>
+<div class="work"><div class="work-visual"></div><div class="work-info"><strong>リノベーション</strong><small>RENOVATION / 2023</small></div></div>
+</div>
+</div>
+</section>
+
+<section id="process" class="process">
+<div class="container">
+<div class="section-head">
+<div><div class="section-label">04 / PROCESS</div><h2>完成までの流れ。</h2></div>
+<p class="section-desc">初回相談から引き渡しまで、状況に合わせて丁寧に進めます。</p>
+</div>
+<div class="steps">
+<div class="step"><div class="step-num">STEP 01</div><h3>ご相談</h3><p>ご要望、敷地条件、予算などをヒアリングします。</p></div>
+<div class="step"><div class="step-num">STEP 02</div><h3>企画・設計</h3><p>条件を整理し、プラン・デザインをご提案します。</p></div>
+<div class="step"><div class="step-num">STEP 03</div><h3>申請・工事</h3><p>必要な申請を行い、施工会社と連携して工事を進めます。</p></div>
+<div class="step"><div class="step-num">STEP 04</div><h3>完成・引渡し</h3><p>工事監理・検査を経て、完成した建物をお引き渡しします。</p></div>
+</div>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<div class="container contact-inner">
+<div><div class="section-label">05 / CONTACT</div><h2>まずは、<br>お話を聞かせてください。</h2><p>建築に関するご相談、土地活用、設計のご依頼など、お気軽にお問い合わせください。</p></div>
+<div class="contact-info">
+<div><strong>EMAIL</strong> info@example.com</div>
+<div><strong>TEL</strong> 00-0000-0000</div>
+<div><strong>ADDRESS</strong> 〒000-0000 東京都〇〇区〇〇 0-0-0</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container footer-inner">
+<div>〇〇建築設計事務所 / ARCHITECTURAL DESIGN OFFICE</div>
+<div>© 2026 〇〇建築設計事務所</div>
+</div>
+</footer>
+</body>
+</html>
